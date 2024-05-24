@@ -3,7 +3,9 @@
 {% load sass_tags %}
 
 
-{% block title %}Blogg{% endblock %}
+{% block title %}
+  {{ article.title }}
+{% endblock %}
 
 {% block content %}
 <main class="container">

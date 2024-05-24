@@ -19,7 +19,7 @@ class WorkReference(models.Model):
 
     title = models.CharField(max_length=100)
     description = CKEditor5Field('content', config_name='extends')
-    file = models.FileField(upload_to='references/', blank=True)
+    file = models.FileField(upload_to='cv/attachments/', blank=True)
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, null=True)
     job_title = models.CharField(max_length=70, blank=True)
     start_date = models.DateField(blank=True, null=True)

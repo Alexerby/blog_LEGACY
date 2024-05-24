@@ -30,7 +30,7 @@
                             <div class="cv-description">{{ reference.description | safe }}</div>
                         {% if reference.file %}
                         <div class="sm-my " style="display: inline-block;">
-                            <a href="{{ reference.file.url }}">
+                            <a target="_blank" href="{{ reference.file.url }}">
                                 <img src="{% static 'core/icons/black/download.svg' %}" alt="">
                                 <span class="xs-mx">Download</span>
                             </a>
