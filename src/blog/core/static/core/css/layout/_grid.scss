@@ -1,0 +1,53 @@
+
+.article {
+    width: 400px;
+    position: relative;
+
+    &:hover {
+
+        .article-card {
+            background-color: var(--clr-secondary-400-95);
+        }
+
+        .article-img {
+            filter: saturate(2);
+            transform: scale(1.05);
+        }
+    }
+
+    .article-card {
+        background-color: var(--clr-primary-400-95);
+        backdrop-filter: blur(2px);
+        color: white;
+        padding: 20px;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 50px;
+        transition: all 0.5s;
+    }
+
+    .article-img-wrapper {
+        overflow: hidden;
+        width: 100%;
+
+        .article-img {
+            transition: transform 0.5s;
+        }
+    }
+
+    .article-title {
+        margin: 10px 0;
+    }
+
+    .article-time {
+        margin: 5px 0;
+        text-transform: uppercase;
+        font-weight: 800;
+        font-size: 0.8rem;
+    }
+
+    .article-entry {
+        color: var(--clr-black-300);
+    }
+}

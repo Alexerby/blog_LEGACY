@@ -1,0 +1,16 @@
+
+{% load static %}
+{% load sass_tags %}
+{% load compress %}
+
+<aside id="sidebar" class="sidebar"">
+    <nav>
+        <div class="md-mb">
+            <img  src="{% static 'core/icons/arrow-left.svg' %}" onclick="toggleSidebar('sidebar')"></img>
+        </div>
+        <div>
+            <a href="/"><img src="{% static 'core/images/signature.png' %}" alt="" class="navbar-brand"></a> 
+        </div>
+        {% include 'core/partials/nav.html' %}
+    </nav>
+</aside>
