@@ -1,0 +1,9 @@
+{% load static %}
+
+<div>
+    {% for icon in icons %}
+        <a target="_blank" href="{{ icon.url }}">
+            <img class="hvr-scale" src="{% static icon.icon %}" alt="{{ icon.alt }}">
+        </a>
+    {% endfor %}
+</div>

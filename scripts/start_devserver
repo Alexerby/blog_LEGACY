@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Start virtual env
+cd ..
+source venv/bin/activate
+
+cd src/blog
+python3 manage.py runserver 8000
+

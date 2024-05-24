@@ -1,0 +1,62 @@
+{% extends 'core/base.html' %}
+
+{% load custom_filters %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+<main class="container">
+
+    <section>
+        {% for section in about_sections %}
+            <h2>{{ section.title }}</h2>
+            <p>{{ section.content }}</p>
+        {% endfor %}
+
+        <div id="politik">
+            {{ about.content | safe}}
+        </div>
+    </section>
+
+    <section class="cv sec-def" id="cv">
+        <h2 class="txt-a-center">Curriculum Vitae</h2>
+        <div class="letter">
+            {% for category, category_name in categories %}
+                <h3 class="lg-mt">{{ category_name }}</h3>
+                <ul>
+                    {% for reference in grouped_references|get_item:category %}
+                        <li>
+                            <div class="flex flex-row flex-a-center flex-jc-space-between">
+                                <h4 class="md-mt sm-mb">{{ reference.title | safe }}</h4>
+                                <p>
+                                    {% if reference.start_date or reference.end_date %}
+                                        {% if reference.start_date %}
+                                            {{ reference.start_date }}
+                                        {% endif %}
+                                        {% if reference.end_date %}
+                                            &mdash; {{ reference.end_date }}
+                                        {% else %}
+                                        &mdash; Present
+                                        {% endif %}
+                                    {% endif %}
+                                </p>
+                            </div>
+                            {% if reference.job_title %}
+                                <p class="md-mb font-cinzel">{{ reference.job_title }}</p>
+                            {% endif %}
+                                <div class="cv-description">{{ reference.description | safe }}</div>
+                            {% if reference.file %}
+                                <p class="sm-my"><a class="link-dec" href="{{ reference.file.url }}">Download</a></p>
+                            {% endif %}
+                        </li>
+                    {% empty %}
+                        <p>No references available in this category.</p>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+{% endblock %}
+

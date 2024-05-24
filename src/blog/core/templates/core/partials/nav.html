@@ -1,0 +1,10 @@
+{% load static %}
+
+<div class="navbar-nav">
+    {% for item in nav_items %}
+        <a href="{% url item.url %}">
+            <img src="{% static item.icon %}" alt="{{ item.alt }}">
+            <span class="decoration-none">{{ item.text }}</span>
+        </a>
+    {% endfor %}
+</div>

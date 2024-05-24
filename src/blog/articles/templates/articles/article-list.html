@@ -1,0 +1,11 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% block title %}Blogg{% endblock %}
+
+{% block content %}
+<main class="container">
+    {% include 'articles/partials/grid_view.html' %}
+</main>
+{% endblock %}

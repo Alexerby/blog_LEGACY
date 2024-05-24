@@ -1,0 +1,28 @@
+{% load static %}
+{% load sass_tags %}
+{% load compress %}
+
+
+<html lang='en'>
+    <head>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <title>{% block title %}Alexander Eriksson{% endblock %}</title>
+        {% compress css %}
+                <link rel='stylesheet' href='{% sass_src 'core/css/style.scss' %}'>
+                {% block head %}
+                {% endblock %}
+        {% endcompress %}
+        {% block javascript %}
+            <script type="text/javascript" src="{% static 'core/js/jquery.min.js' %}"></script>
+            <script src="https://d3js.org/d3.v7.min.js"></script>
+            <script type="text/javascript" src="{% static 'core/js/functions.js' %}"></script>
+        {% endblock %}
+    </head>
+    {% include 'core/header.html' %}
+    <body>
+        {% block content %}
+            
+        {% endblock %}
+    </body>
+</html>

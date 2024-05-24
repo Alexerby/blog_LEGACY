@@ -1,0 +1,19 @@
+{% load static %}
+
+<div class="blog flex-flow-rw">
+    {% for article in articles %}
+        {% if article.published %}
+            <a href="{{ article.get_absolute_url }}">
+                <article class="article">
+                    <div class="article-img-wrapper">
+                        <img src="{{ article.thumbnail.url }}" class="article-img h-full w-full ar-3b2" alt="">
+                    </div>
+                    <div class="article-card">
+                        <time class="article-time">{{ article.created_at | date:"d M Y" }}</time>
+                        <h3 class="article-title">{{ article.title }}</h3>
+                    </div>
+                </article>
+            </a>
+        {% endif %}
+    {% endfor %}
+</div>

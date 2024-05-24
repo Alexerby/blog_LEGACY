@@ -1,0 +1,47 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<main>
+    <section class="container flex flex-row flex-responsive sec-def">
+        <div class="flex flex-col flex-b-100 flex-jc-center">
+            <div class="txt-div">
+                <h1>{{ content_snippet_intro.title | safe }}</h1>
+                {{ content_snippet_intro.content | safe }}
+            </div>
+            <div class="flex flex-jc-center md-my">
+                {% include 'core/partials/socialmedia_icons.html' %}
+            </div>
+            <div class="flex flex-jc-center md-mb">
+                <a class="btn-cta-2" href="{% url 'about:about' %}#cv">Läs CV...</a>
+            </div>
+        </div>
+        <div class="flex flex-col flex-b-100 xxl--mx">
+            <div class="flex flex-jc-end flex-responsive-jc-c">
+                <img class="w-full max-w-40p sm-m of-cover br-10" src="{% static 'core/images/f1.jpg' %}" alt="">
+                <img class="w-full max-w-40p sm-m of-cover br-10" src="{% static 'core/images/f2.jpg' %}" alt="">
+            </div>
+            <div class="flex flex-jc-end flex-responsive-jc-c">
+                <img class="w-full max-w-40p sm-m of-cover br-10" src="{% static 'core/images/f3.jpg' %}" alt="">
+                <img class="w-full max-w-40p sm-m of-cover br-10" src="{% static 'core/images/fb4.jpg' %}" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="container xxl-my sec-def">
+        <div class="txt-div">
+            <h1 class="txt-a-center sm-my">{{ about.title | safe }}</h1>
+            {{ about.content | truncatechars:580 | safe}}
+        </div>
+        <p class="xl-mt">
+            <a class="btn-cta-1" href="{% url 'about:about' %}#politik">Fortsätt läsa...</a>
+        </p>
+    </section>
+    <section class="container sec-ctr xxl-my sec-def">
+        <h1 class="txt-a-center xl-mb">Blogg</h1>
+        {% include 'articles/partials/list_view.html' %}
+    </section>
+</main>
+{% endblock %}

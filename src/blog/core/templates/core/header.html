@@ -1,0 +1,10 @@
+{% load static %}
+{% load sass_tags %}
+{% load compress %}
+
+<header class="container header">
+    <nav class="navbar">
+        <a href="/"><img src="{% static 'core/images/signature.png' %}" alt="" class="navbar-brand"></a>
+        {% include 'core/partials/nav.html' %}
+    </nav>
+</header>
