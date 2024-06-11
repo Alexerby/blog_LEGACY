@@ -8,6 +8,15 @@ from django.urls import reverse
 
 
 class Article(models.Model):
+
+    CATEGORY_CHOICES = [
+        ('boating', 'Boating'),
+        ('motorcycling', 'Motorcycling'),
+        ('software_development', 'Software Development'),
+        ('investing', 'Investing'),
+        ('other', 'Other')
+    ]
+
     title = models.CharField(max_length=100)
     thumbnail = models.FileField(upload_to='articles/thumbnails')
     entry = models.TextField(validators=[MaxLengthValidator(350)])
@@ -18,10 +27,15 @@ class Article(models.Model):
     published = models.BooleanField(default=False) 
     slug = AutoSlugField(populate_from='title', unique=True, default=None)  
     references = models.TextField(default=None, null=True, blank=True)
+    category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, null=True)
     
     def get_absolute_url(self):
         return reverse('articles:article', kwargs={'slug': self.slug})  
 
+    def get_category_display_name(self):
+        return dict(self.CATEGORY_CHOICES).get(self.category, 'Unknown')
 
     def __str__(self):
         return str(self.title)
+
+

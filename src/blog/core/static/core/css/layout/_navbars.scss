@@ -46,6 +46,11 @@
 
 
     .sidebar-menu {
+
+      &:hover {
+        cursor: pointer;
+      }
+
         @media (min-width: 1000px) {
             display: none;
         }

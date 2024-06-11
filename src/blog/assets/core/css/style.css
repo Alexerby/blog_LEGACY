@@ -619,6 +619,8 @@ i {
         margin-left: 5rem; }
       .navbar .navbar-nav a span {
         margin-left: 0.5rem; }
+  .navbar .sidebar-menu:hover {
+    cursor: pointer; }
   @media (min-width: 1000px) {
     .navbar .sidebar-menu {
       display: none; } }
@@ -1238,5 +1240,8 @@ main {
   transition: box-shadow 0.3s ease-in-out; }
   .hvr-bs:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); }
+
+.cursor--pointer {
+  cursor: pointer; }
 
 /*# sourceMappingURL=style.css.map */

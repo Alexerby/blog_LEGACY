@@ -10,7 +10,8 @@
                     </div>
                     <div class="xl-px xs-py">
                         <h3 class="article-title">{{ article.title }}</h3>
-                        <time class="article-time">{{ article.created_at | date:"d M Y" }}</time>
+                        <time class="article-time">{{ article.created_at | date:"d M Y" }} </time> 
+                        <span>| {{ article.get_category_display_name | safe }}</span>
                         <p class="sm-py txt-lh-125">{{ article.entry | truncatechars:200 | safe }}...</p>
                     </div>
                 </article>
