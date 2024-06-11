@@ -16,3 +16,28 @@ if ((st > lastScrollTop) && (lastScrollTop>0)) {
        lastScrollTop = st;
     });
 });
+
+// Sidebar functionality
+function showSidebar() {
+    const sideBar = document.getElementById('sidebar') 
+    sideBar.style.display = 'flex';
+}
+
+function hideSidebar() {
+    const sideBar = document.getElementById('sidebar') 
+    sideBar.style.display = 'none';
+}
+
+$(window).on('resize', function() {
+    hideSidebar()
+});
+
+
+function toggleSidebar(elementId) {
+  const targetElement = document.getElementById(elementId);
+  if (window.getComputedStyle(targetElement).display === 'none') {
+    targetElement.style.display = 'block'; 
+  } else {
+    targetElement.style.display = 'none';
+  }
+}

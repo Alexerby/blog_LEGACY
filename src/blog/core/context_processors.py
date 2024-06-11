@@ -38,6 +38,12 @@ def socialmedia_icons(request):
             'icon': 'core/icons/socialmedia/linkedin.svg',
             'alt': 'LinkedIn'
         },
+        {
+            'url': 'https://www.youtube.com/@Alexander.Eriksson',
+            'icon': 'core/icons/socialmedia/youtube.svg',
+            'alt': 'Youtube'
+
+        },
     ]
 
     return { 'icons': icons }

@@ -1,0 +1,15 @@
+
+.header {
+    background-color: var(--clr-primary-400-95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    transition: 0.3s ease;
+    z-index: 999;
+
+    a {
+        color: white;
+    }
+
+}

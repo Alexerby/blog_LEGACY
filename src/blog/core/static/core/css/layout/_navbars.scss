@@ -1,0 +1,138 @@
+.navbar {
+
+
+    @media (min-width: 1000px) {
+        // Hide icon above 1000px
+        .sidebar-toggle {
+            display: none;
+        }
+    }
+
+
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+    justify-content: space-between;
+    margin: 0 15px;
+
+
+
+    .navbar-nav {
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+
+
+        a {
+            @include underline-hover-effect(1px);
+
+            margin-left: 2rem;
+
+            display: flex;
+            align-items: center;
+
+            &:first-child {
+                margin-left: 5rem;
+            }
+
+            span {
+                margin-left: 0.5rem;
+            }
+        }
+
+    }
+
+
+    .sidebar-menu {
+
+      &:hover {
+        cursor: pointer;
+      }
+
+        @media (min-width: 1000px) {
+            display: none;
+        }
+    }
+
+    @media (max-width: 1000px) {
+        .navbar-nav {
+            display: none;
+        }
+    }
+
+    .sidebar-toggle  {
+
+        
+        .bar1 {
+            transform: translate(0, 11px) rotate(-45deg);
+        }
+
+        .bar2 {
+            opacity: 0;
+        }
+
+        .bar3 {
+            transform: translate(0, -11px) rotate(45deg);
+        }
+
+    }
+
+    .bar1, .bar2, .bar3 {
+        width: 35px;
+        height: 5px;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+
+    .bar {
+        background-color: white;
+    }
+
+}
+
+.sidebar {
+    text-align: center;
+    z-index: 999;
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--clr-primary-400-95);
+    backdrop-filter: blur(5px);
+
+    nav {
+        height: 100%;
+        padding: 40px;
+
+        .navbar-nav {
+            display: flex;
+            flex-direction: column;
+
+            a {
+                margin-bottom: 15px;
+
+                img {
+                    margin-right: 5px;
+                }
+
+            }
+        }
+
+        span {
+            color: white;
+        }
+
+        .navbar-brand {
+            margin-bottom: 20px;
+        }
+    }
+
+}
+
+    .navbar-brand {
+        width: clamp(150px, 25vw, 400px);
+    }

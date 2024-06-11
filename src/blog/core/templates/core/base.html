@@ -7,6 +7,7 @@
     <head>
         <meta charset='UTF-8'>
         <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+        <link rel="icon" type="image/png" href="{% static 'core/logos/circle.png' %}">
         <title>{% block title %}Alexander Eriksson{% endblock %}</title>
         {% compress css %}
                 <link rel='stylesheet' href='{% sass_src 'core/css/style.scss' %}'>
@@ -21,6 +22,7 @@
     </head>
     {% include 'core/header.html' %}
     <body>
+        {% include 'core/sidebar.html' %}
         {% block content %}
             
         {% endblock %}
