@@ -28,6 +28,9 @@ INSTALLED_APPS = [
     'sass_processor',
     'django_ckeditor_5', # Rich text editor
 
+    # Custom Apps
+    'hitcount',
+
      # Apps
     'core',
     'user',
