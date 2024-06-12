@@ -783,6 +783,16 @@ table {
   table tr:hover {
     background-color: #f5f5f5; }
 
+.pagination .btn {
+  background-color: var(--clr-primary-400);
+  color: white;
+  padding: 0.4rem;
+  border: 1px solid var(--clr-primary-400); }
+
+.pagination .btn--current {
+  background-color: transparent;
+  color: var(--clr-primary-400); }
+
 :root {
   font-family: 'LibreFranklin', sans-serif;
   --clr-primary-100: #e0ebe7;

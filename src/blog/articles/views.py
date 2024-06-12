@@ -14,6 +14,8 @@ class ArticleListView(ListView):
     context_object_name = 'articles'  
     ordering = ['created_at']
 
+    paginate_by = 10
+
     def get_queryset(self):
         return Article.objects.order_by('created_at')
 

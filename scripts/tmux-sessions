@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Create a new tmux session named 'server' and run the server
+tmux new-session -d -s 'server' -n 'main' './start_devserver'
+echo "Created tmux session: server and started the dev server."
+
+# Create a new tmux session named 'psql' and change directory
+tmux new-session -d -s 'psql' -n 'main' 'cd .. && tmux detach'
+echo "Created tmux session: psql and changed directory."
+
+# Create a new tmux session named 'vim' and change directory
+tmux new-session -d -s 'vim' -n 'main' 'cd ../src'
+echo "Created tmux session: vim and changed directory."
+
