@@ -14,15 +14,15 @@
         <img class="post-img" src="{{ article.thumbnail.url }}" alt="">
         <h1 class="post-title">{{ article.title }}</h1>
         <time class="post-time">{{ article.created_at | date:"d M Y" }}</time>
-        <p class="post-entry">{{ article.article_entry | safe }}</p>
+        <p class="post-entry">{{ article.entry | safe }}</p>
         <div class="post-body">
             {{ article.content | safe }}
         </div>
 
         {% if article.references %}
             <h2>Referenser</h2>
-            <div class="post-body">
-                {{ article.references }}
+            <div class="post-references">
+                {{ article.references | safe }}
             </div>
         {% endif %}
     </article>

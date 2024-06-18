@@ -1,19 +1,13 @@
 
 import os
-import environ
-
 from pathlib import Path
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
-
-env = environ.Env()
-environ.Env.read_env()
+import json
 
 
-SECRET_KEY = env('SECRET_KEY')
-DEBUG = env('DEBUG')
-ALLOWED_HOSTS = ['127.0.0.1']
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
+CONFIG_FILE = '/etc/blog/config.json'
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -84,17 +78,19 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': env('DATABASE_ENGINE'),
-        'NAME': env('DATABASE_NAME'),
-        'USER': env('DATABASE_USER'),
-        'PASSWORD': env('DATABASE_PASSWORD'),
-        'HOST': env('DATABASE_HOST'),
-        'PORT': env('DATABASE_PORT')
-    }
-}
+with open(CONFIG_FILE) as f:
+    config = json.load(f)
 
+    DATABASES = {
+        'default': {
+            'ENGINE': config['databases']['blog']['engine'],
+            'NAME': config['databases']['blog']['name'],
+            'USER': config['databases']['blog']['user'],
+            'PASSWORD': config['databases']['blog']['password'],
+            'HOST': config['databases']['blog']['host'],
+            'PORT': config['databases']['blog']['port']
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -134,7 +130,7 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets/') 
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets') 
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -248,3 +244,5 @@ CKEDITOR_5_CONFIGS = {
         }
     }
 }
+
+
