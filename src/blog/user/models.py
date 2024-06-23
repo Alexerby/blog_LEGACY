@@ -1,7 +1,6 @@
 from django.db import models
 
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
-
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, Group, PermissionsMixin
 
 
 class UserManager(BaseUserManager):
@@ -38,9 +37,11 @@ class User(AbstractBaseUser):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
+    groups = models.ManyToManyField('CustomGroup', related_name='users', blank=True)
     
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['email', 'first_name', 'last_name']
+
 
     def has_perm(self, perm, obj=None):
         return self.is_superuser
@@ -53,3 +54,9 @@ class User(AbstractBaseUser):
     def __str__(self):
         return f'{self.username}'
 
+
+class CustomGroup(Group):
+    description = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.name 

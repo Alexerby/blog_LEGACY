@@ -8,6 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
 CONFIG_FILE = '/etc/blog/config.json'
 
+ADMIN_WHITELIST = ['127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -43,6 +44,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # Custom
+    'core.middleware.admin_restrict.AdminRestrictMiddleware'
 ]
 
 ROOT_URLCONF = 'blog.urls'
@@ -74,9 +78,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'blog.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 with open(CONFIG_FILE) as f:
     config = json.load(f)
@@ -118,9 +119,6 @@ STATICFILES_FINDERS = (
                        ) 
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/5.0/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -132,6 +130,14 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets') 
 
+
+print(BASE_DIR)
+print(BASE_DIR)
+print(BASE_DIR)
+print(BASE_DIR)
+print(BASE_DIR)
+print(BASE_DIR)
+
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
@@ -142,19 +148,9 @@ COMPRESS_PRECOMPILERS = (
 
 COMPRESS_ENABLED = True
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.0/howto/static-files/
-
-STATIC_URL = 'static/'
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-
-# Django CKEditor 5
 
 customColorPalette = [
         {

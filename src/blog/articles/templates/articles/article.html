@@ -12,6 +12,12 @@
 <main class="container">
     <article class="post">
         <img class="post-img" src="{{ article.thumbnail.url }}" alt="">
+        {% if user_is_editor %}
+        <p>
+           <a class="btn-cta-1 xs-p" href="{% url 'articles:edit' slug=article.slug %}">Edit Post</a>
+           <a class="btn-cta-warning xs-p" href="{% url 'articles:delete' slug=article.slug %}">Delete Post</a>
+        </p>
+        {% endif %}
         <h1 class="post-title">{{ article.title }}</h1>
         <time class="post-time">{{ article.created_at | date:"d M Y" }}</time>
         <p class="post-entry">{{ article.entry | safe }}</p>

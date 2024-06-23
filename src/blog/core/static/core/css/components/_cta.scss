@@ -3,7 +3,6 @@
     border-radius: 1.5rem;
     border: 1px solid var(--clr-secondary-400);
     background-color: var(--clr-secondary-400);
-    padding: 1rem;
     color: white;
 
     transition: all 0.25s ease;
@@ -24,4 +23,19 @@
         color: var(--clr-primary-400);
     }
     
+}
+
+.btn-cta-warning {
+  background-color: var(--clr-warning);
+  border-radius: 1.5rem;
+  border: 1px solid var(--clr-warning);
+  background-color: var(--clr-warning);
+  color: white;
+
+  transition: all 0.25s ease;
+
+    &:hover {
+        background-color: transparent;
+        color: var(--clr-warning);
+    }
 }

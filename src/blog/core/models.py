@@ -2,6 +2,7 @@ from django.db import models
 
 from django_ckeditor_5.fields import CKEditor5Field
 
+
 class ContentSnippet(models.Model):
     title = models.CharField(max_length=100, null=True)
     ident = models.CharField(max_length=50, db_index=True)
@@ -9,4 +10,6 @@ class ContentSnippet(models.Model):
 
     def __str__(self):
         return self.ident
+
+
 

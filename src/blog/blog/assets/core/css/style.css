@@ -32,10 +32,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-input {
-  -webkit-appearance: none;
-  border-radius: 0; }
-
 .flex {
   display: flex; }
 
@@ -801,6 +797,22 @@ table {
   background-color: transparent;
   color: var(--clr-primary-400); }
 
+.form-default p {
+  margin-bottom: 0.5rem; }
+
+.form-default textarea {
+  width: 100%; }
+
+.form-default label {
+  margin-top: 1rem;
+  display: block; }
+
+.form-default input[type="text"] {
+  width: 100%; }
+
+.ck-editor-container {
+  margin-bottom: 2rem; }
+
 :root {
   font-family: 'LibreFranklin', sans-serif;
   --clr-primary-100: #e0ebe7;
@@ -1261,5 +1273,8 @@ main {
 
 .cursor--pointer {
   cursor: pointer; }
+
+.http_responses {
+  background-color: var(--clr-primary-400-95); }
 
 /*# sourceMappingURL=style.css.map */

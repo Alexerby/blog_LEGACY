@@ -32,10 +32,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-input {
-  -webkit-appearance: none;
-  border-radius: 0; }
-
 .flex {
   display: flex; }
 
@@ -609,7 +605,7 @@ i {
         height: 1px;
         bottom: 0;
         left: 0;
-        background-color: var(--clr-secondary-400);
+        background-color: white;
         transform-origin: bottom left;
         transition: transform 0.5s ease-out; }
       .navbar .navbar-nav a:hover::after {
@@ -707,7 +703,6 @@ i {
   border-radius: 1.5rem;
   border: 1px solid var(--clr-secondary-400);
   background-color: var(--clr-secondary-400);
-  padding: 1rem;
   color: white;
   transition: all 0.25s ease; }
   .btn-cta-1:hover {
@@ -720,6 +715,17 @@ i {
   transition: all 0.25s ease; }
   .btn-cta-2:hover {
     color: var(--clr-primary-400); }
+
+.btn-cta-warning {
+  background-color: var(--clr-warning);
+  border-radius: 1.5rem;
+  border: 1px solid var(--clr-warning);
+  background-color: var(--clr-warning);
+  color: white;
+  transition: all 0.25s ease; }
+  .btn-cta-warning:hover {
+    background-color: transparent;
+    color: var(--clr-warning); }
 
 .post h1, .post h2, .post h3, .post h4, .post h5, .post h6 {
   margin-bottom: 15px;
@@ -800,6 +806,22 @@ table {
 .pagination .btn--current {
   background-color: transparent;
   color: var(--clr-primary-400); }
+
+.form-default p {
+  margin-bottom: 0.5rem; }
+
+.form-default textarea {
+  width: 100%; }
+
+.form-default label {
+  margin-top: 1rem;
+  display: block; }
+
+.form-default input[type="text"] {
+  width: 100%; }
+
+.ck-editor-container {
+  margin-bottom: 2rem; }
 
 :root {
   font-family: 'LibreFranklin', sans-serif;
@@ -1122,7 +1144,8 @@ table {
   --clr-black-600-80: white80;
   --clr-black-600-85: white85;
   --clr-black-600-90: white90;
-  --clr-black-600-95: white95; }
+  --clr-black-600-95: white95;
+  --clr-warning: #FF5733; }
 
 body {
   color: var(--clr-black-200);
@@ -1261,5 +1284,8 @@ main {
 
 .cursor--pointer {
   cursor: pointer; }
+
+.http_responses {
+  background-color: var(--clr-primary-400-95); }
 
 /*# sourceMappingURL=style.css.map */

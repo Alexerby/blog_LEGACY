@@ -23,6 +23,7 @@
 @import "components/_post.scss";
 @import "components/_tables.scss";
 @import "components/_pagination.scss";
+@import "components/_forms.scss";
 
 :root {
 
@@ -45,6 +46,7 @@
         }
     }
 
+    --clr-warning: #FF5733;
 }
 
 body {
@@ -152,9 +154,6 @@ main {
 
 }
 
-
-
-
 .letter {
     background: #fff;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
@@ -225,4 +224,8 @@ main {
 
 .cursor--pointer {
   cursor: pointer;
+}
+
+.http_responses {
+    background-color: var(--clr-primary-400-95);
 }
