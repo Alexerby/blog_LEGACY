@@ -605,7 +605,7 @@ i {
         height: 1px;
         bottom: 0;
         left: 0;
-        background-color: var(--clr-secondary-400);
+        background-color: white;
         transform-origin: bottom left;
         transition: transform 0.5s ease-out; }
       .navbar .navbar-nav a:hover::after {
@@ -703,7 +703,6 @@ i {
   border-radius: 1.5rem;
   border: 1px solid var(--clr-secondary-400);
   background-color: var(--clr-secondary-400);
-  padding: 1rem;
   color: white;
   transition: all 0.25s ease; }
   .btn-cta-1:hover {
@@ -716,6 +715,17 @@ i {
   transition: all 0.25s ease; }
   .btn-cta-2:hover {
     color: var(--clr-primary-400); }
+
+.btn-cta-warning {
+  background-color: var(--clr-warning);
+  border-radius: 1.5rem;
+  border: 1px solid var(--clr-warning);
+  background-color: var(--clr-warning);
+  color: white;
+  transition: all 0.25s ease; }
+  .btn-cta-warning:hover {
+    background-color: transparent;
+    color: var(--clr-warning); }
 
 .post h1, .post h2, .post h3, .post h4, .post h5, .post h6 {
   margin-bottom: 15px;
@@ -772,7 +782,9 @@ i {
   margin: 20px 0; }
 
 .post ol {
-  margin: 40px 0 40px 60px; }
+  margin: 20px 40px; }
+  .post ol li {
+    margin: 10px 0; }
 
 table {
   border-collapse: collapse;
@@ -1134,7 +1146,8 @@ table {
   --clr-black-600-80: white80;
   --clr-black-600-85: white85;
   --clr-black-600-90: white90;
-  --clr-black-600-95: white95; }
+  --clr-black-600-95: white95;
+  --clr-warning: #FF5733; }
 
 body {
   color: var(--clr-black-200);
