@@ -128,6 +128,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets') 
 
+
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
@@ -170,13 +171,10 @@ CKEDITOR_5_CONFIGS = {
 'default': {
     'toolbar': ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', 'imageUpload', ],
     },
-
 'comment': {
     'toolbar': ['heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', ],
     },
-
 'extends': {
-
     'blockToolbar': [
         'paragraph', 'heading1', 'heading2', 'heading3',
         '|',
@@ -189,7 +187,6 @@ CKEDITOR_5_CONFIGS = {
                 'bulletedList', 'numberedList', 'todoList', '|',  'blockQuote', 'imageUpload', '|',
                 'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'mediaEmbed', 'removeFormat',
                 'insertTable',],
-
     'image': {
         'toolbar': ['imageTextAlternative', '|', 'imageStyle:alignLeft',
                     'imageStyle:alignRight', 'imageStyle:alignCenter', 'imageStyle:side',  '|'],
@@ -202,7 +199,6 @@ CKEDITOR_5_CONFIGS = {
             ]
 
         },
-
     'table': {
         'contentToolbar': [ 'tableColumn', 'tableRow', 'mergeTableCells',
                            'tableProperties', 'tableCellProperties' ],
@@ -215,7 +211,6 @@ CKEDITOR_5_CONFIGS = {
             'backgroundColors': customColorPalette
             }
         },
-
     'heading' : {
         'options': [
             { 'model': 'paragraph', 'title': 'Paragraph', 'class': 'ck-heading_paragraph' },
@@ -225,7 +220,6 @@ CKEDITOR_5_CONFIGS = {
             ]
         }
     },
-
 'list': {
     'properties': {
         'styles': 'true',

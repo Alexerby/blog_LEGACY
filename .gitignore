@@ -163,4 +163,5 @@ cython_debug/
 
 # Django SCSS cache
 **/CACHE/css/output.*
-src/blog/assets/CACHE/
+src/blog/assets/CACHE/*
+src/assets/*

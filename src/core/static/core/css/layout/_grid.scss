@@ -50,4 +50,10 @@
     .article-entry {
         color: var(--clr-black-300);
     }
+
+    .edit-buttons {
+      position: absolute;
+      right: 20px;
+      bottom: -20px;
+    }
 }

@@ -1,3 +1,4 @@
+
 {% extends 'core/base.html' %}
 {% load static %}
 {% load sass_tags %}
@@ -9,12 +10,11 @@
 {% block content %}
 <main>
     <section class="container">
-        <h1>Add Post</h1>
+        <h1>Delete Post</h1>
         <form method="POST" enctype="multipart/form-data" class="form-default">
             {% csrf_token %}
-            {{ form.as_p }}
-            {{ form.media }}
-            <button class="btn-cta-1 xs-p"">Publish</button>
+            <strong>Are you sure?</strong>
+            <button class="btn-cta-warning xs-p"">Delete Post</a>
         </form>
     </section>
 </main>

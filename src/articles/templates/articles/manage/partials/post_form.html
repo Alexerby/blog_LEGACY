@@ -1,0 +1,54 @@
+<form method="POST" enctype="multipart/form-data" class="post-editor">
+    {% csrf_token %}
+    <div class="md-my post-editor__meta-info">
+        <div>
+            <p>{{ form.title.label }}</p>
+            <p>{{ form.title }}</p>
+            <p>{{ form.title.errors }}</p>
+        </div>
+        <div>
+            <p>{{ form.category.label }}</p>
+            <p>{{ form.category }}</p>
+            <p>{{ form.category.errors }}</p>
+        </div>
+        <div>
+            <p>{{ form.language.label }}</p>
+            <p>{{ form.language }}</p>
+            <p>{{ form.language.errors }}</p>
+        </div>
+        <div>
+            <p>{{ form.published.label }}</p>
+            <p>{{ form.published }}</p>
+            <p>{{ form.published.errors }}</p>
+        </div>
+        <div>
+            <p>{{ form.author.label }}</p>
+            <p>{{ form.author }}</p>
+            <p>{{ form.author.errors }}</p>
+        </div>
+        <div>
+            <p>{{ form.thumbnail.label }}</p>
+            <p>{{ form.thumbnail }}</p>
+            <p>{{ form.thumbnail.errors }}</p>
+        </div>
+    </div>
+    <div class="post-editor__content-info">
+        <div>
+            <p>{{ form.entry.label }}</p>
+            <p>{{ form.entry }}</p>
+            <p>{{ form.entry.errors }}</p>
+        </div>
+        <div>
+            <p>{{ form.content.label }}</p>
+            <p>{{ form.content }}</p>
+            <p>{{ form.content.errors }}</p>
+        </div>
+        <div>
+            <p>{{ form.references.label }}</p>
+            <p>{{ form.references }}</p>
+            <p>{{ form.references.errors }}</p>
+        </div>
+    </div>
+    {{ form.media }}
+    <button type="submit" class="btn-cta-1 xs-p"">Publish</button>
+</form>

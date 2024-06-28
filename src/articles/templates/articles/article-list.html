@@ -6,6 +6,11 @@
 
 {% block content %}
 <main class="container">
+    {% if user_is_editor %}
+        <div class="xl-my">
+            <a href="{% url 'articles:manage' %}" class="btn-cta-1 xs-p">Manage Posts</a>
+        </div>
+    {% endif %}
     {% include 'articles/partials/grid_view.html' %}
 </main>
 <div class="pagination txt-a-center">

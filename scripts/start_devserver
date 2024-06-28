@@ -4,6 +4,6 @@
 cd ..
 source venv/bin/activate
 
-cd src/blog
+cd src
 python3 manage.py runserver 8000
 

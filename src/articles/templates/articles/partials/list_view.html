@@ -6,12 +6,13 @@
             <a class="w-full hvr-bs" href="{{ article.get_absolute_url }}">
                 <article class="article flex item-center bg-content w-full flex-responsive">
                     <div class="article-img-wrapper flex-b-30 flex-s-0">
-                        <img src="{{ article.thumbnail.url }}" class="article-img h-200 w-full" alt="">
+                        <img src="{{ article.thumbnail.url }}" class="article-img h-300 w-full" alt="">
                     </div>
                     <div class="xl-px xs-py">
                         <h3 class="article-title">{{ article.title }}</h3>
                         <time class="article-time">{{ article.created_at | date:"d M Y" }} </time> 
                         <span>| {{ article.get_category_display_name | safe }}</span>
+                        <span>| {{ article.get_language_display_name | safe }}</span>
                         <p class="sm-py txt-lh-125">{{ article.entry | truncatechars:200 | safe }}...</p>
                     </div>
                 </article>

@@ -1,0 +1,41 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% block title %}Alexander Eriksson | Blogg{% endblock %}
+
+{% block content %}
+<main class="container">
+    <div class = "lg-my">
+        <a class="btn-cta-1 xs-p" href="{% url 'articles:add'  %}">Create Post</a>
+    </div>
+    {% for article in articles %}
+        <div class="xl-my">
+            <a class="w-full hvr-bs" href="{{ article.get_absolute_url }}">
+                <article class="article flex item-center bg-content w-full flex-responsive">
+                    <div class="article-img-wrapper flex-b-30 flex-s-0">
+                        <img src="{{ article.thumbnail.url }}" class="article-img h-300 w-full" alt="">
+                    </div>
+                    <div>
+                        <div class="xl-px xs-py">
+                            <h3 class="article-title">{{ article.title }}</h3>
+                            <time class="article-time">{{ article.created_at | date:"d M Y" }} </time> 
+                            <span>| {{ article.get_category_display_name | safe }}</span>
+                            <span>| {{ article.get_language_display_name | safe }}</span>
+                            <p class="sm-py txt-lh-125">{{ article.entry | truncatechars:200 | safe }}...</p>
+                        </div>
+                        <div class="edit-buttons">
+                            {% if user_is_editor %}
+                                <p>
+                                   <a class="btn-cta-1 xs-p" href="{% url 'articles:edit' slug=article.slug %}">Edit Post</a>
+                                   <a class="btn-cta-warning xs-p" href="{% url 'articles:delete' slug=article.slug %}">Delete Post</a>
+                                </p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </article>
+            </a>
+        </div>
+    {% endfor %}
+</main>
+{% endblock %}

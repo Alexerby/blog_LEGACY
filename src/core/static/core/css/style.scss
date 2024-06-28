@@ -54,8 +54,6 @@ body {
     background-color: #F2F2F2;
 }
 
-
-
 main {
     margin: 200px 0;
 }
@@ -82,6 +80,12 @@ main {
     display: flex;
     justify-content: space-between;
     gap: 20px;
+}
+
+.container-txt {
+    @media (max-width: 1200px) {
+        text-align: center;
+    }
 }
 
 
@@ -229,3 +233,5 @@ main {
 .http_responses {
     background-color: var(--clr-primary-400-95);
 }
+
+

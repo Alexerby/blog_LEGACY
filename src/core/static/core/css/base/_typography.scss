@@ -70,6 +70,7 @@ i {
     font-style: italic;
 }
 
+
 @each $size in ('1.00', '1.25', '1.50', '1.75', '2.00') {
     $size-str: str-replace($size, '.', '');
     .txt-lh-#{$size-str} {

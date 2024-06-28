@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+<main>
+    <section class="container">
+        <h1>Edit Post</h1>
+        {% include 'articles/manage/partials/post_form.html' %}
+    </section>
+</main>
+{% endblock %}
+

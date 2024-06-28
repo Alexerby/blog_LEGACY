@@ -4,10 +4,15 @@ from .models import Article
 class ArticleForm(forms.ModelForm):
     class Meta:
         model = Article
-        widgets = {
-            'published': forms.CheckboxInput(),
-        }
 
-        fields = ['title', 'thumbnail', 'entry', 'content', 'author',
-                  'published', 'references', 'category']
+        fields = ['title', 
+                  'author', 
+                  'language',
+                  'category', 
+                  'thumbnail', 
+                  'published',  
+                  'entry', 
+                  'content',
+                  'references', 
+                  ]
 

@@ -3,14 +3,20 @@ table {
     width: 100%;
     border: 1px solid #ddd;
 
-    td {
+
+    td, th {
         padding: 12px;
         text-align: left;
+
+    }
+
+    td {
         border-bottom: 1px solid #ddd;
     }
 
     th {
-        background-color: #f2f2f2;
+        background-color: var(--clr-primary-400-95);
+        color: white;
     }
 
     tr:hover {

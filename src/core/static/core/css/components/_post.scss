@@ -44,8 +44,8 @@
     }
 
     .post-entry {
-      font-weight: 600;
-
+      font-weight: 800;
+      font-size: 1.2rem;
     }
 
 
@@ -54,11 +54,13 @@
     }
 
     .post-references {
-        color: var(--clr-black-200);
         
         p {
           margin: 0.2rem;
         }
+          a {
+            color: var(--clr-primary-400);
+          }
     }
 
     pre {
@@ -70,12 +72,14 @@
         margin: 20px 0;
     }
 
-    ol {
+    ol, ul {
       margin: 20px 40px;
+
         
         li {
           margin: 10px 0;
+          line-height: 1.5;
         }
     }
-
+  @include block-quote;
 }
