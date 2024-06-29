@@ -1,0 +1,20 @@
+
+.form-default {
+  p {
+    margin-bottom: 0.5rem;
+  }
+  textarea {
+    width: 100%;
+  }
+  label {
+    margin-top: 1rem;
+    display: block;
+  }
+  input[type="text"] {
+    width: 100%;
+  }
+}
+
+.ck-editor-container {
+    margin-bottom: 2rem;
+}

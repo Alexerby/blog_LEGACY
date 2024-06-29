@@ -1,0 +1,105 @@
+.sec-def {
+    margin: 100px 0;
+}
+
+$max-width-values: 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000;
+@each $value in $max-width-values {
+  .max-w-#{$value} {
+    max-width: #{$value}px;
+  }
+
+}
+
+$max-width-percentage-values: 10, 20, 30, 40, 50, 60, 70, 80, 90, 100;
+@each $value in $max-width-percentage-values {
+  .max-w-#{$value}p {
+    max-width: #{$value + "%"};
+  }
+
+}
+
+
+// Creates all classes for margins and padding
+$padding-sizes: (
+    xxl: 4rem,
+    xl: 3rem,
+    lg: 2rem,
+    md: 1.5rem,
+    sm: 1rem,
+    xs: 0.75rem,
+    xxs: 0.5rem
+);
+
+$margin-sizes: (
+    xxl: 4rem,
+    xl: 3rem,
+    lg: 2rem,
+    md: 1.5rem,
+    sm: 1rem,
+    xs: 0.75rem,
+    xxs: 0.5rem
+);
+
+$margin-list: ();
+@each $key, $value in $margin-sizes {
+    $margin-list: append($margin-list, ($key, $value));
+}
+
+@each $item in $margin-list {
+    $size: nth($item, 2);
+    $breakpoint: nth($item, 1);
+
+        .#{$breakpoint}-my {
+            margin-top: $size;
+            margin-bottom: $size;
+        }
+
+        .#{$breakpoint}-mx {
+            margin-left: $size;
+            margin-right: $size;
+        }
+
+        .#{$breakpoint}-py {
+            padding-top: $size;
+            padding-bottom: $size;
+        }
+
+        .#{$breakpoint}-px {
+            padding-left: $size;
+            padding-right: $size;
+        }
+
+        .#{$breakpoint}-p {
+            padding: $size;
+        }
+
+        .#{$breakpoint}-m {
+            margin: $size;
+        }
+
+        .#{$breakpoint}-mt {
+            margin-top: $size;
+        }
+
+        .#{$breakpoint}-mb {
+            margin-bottom: $size;
+        }
+
+        .#{$breakpoint}-pt {
+            padding-top: $size;
+        }
+
+        .#{$breakpoint}-pb {
+            padding-bottom: $size;
+        }
+}
+
+.bg-content {
+    background-color: white;
+}
+
+@each $size in (100, 200, 300, 400, 500) {
+    .h-#{$size} {
+        height: #{$size}px; 
+    }
+}

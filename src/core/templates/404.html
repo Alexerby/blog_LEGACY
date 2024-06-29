@@ -1,0 +1,22 @@
+
+
+{% load static %}
+{% load sass_tags %}
+{% load compress %}
+
+<html>
+    <head>
+        <title>Page not found (404)</title>
+    {% compress css %}
+            <link rel='stylesheet' href='{% sass_src 'core/css/style.scss' %}'>
+            {% block head %}
+            {% endblock %}
+    {% endcompress %}
+    </head>
+    <title></title>
+
+    <main class="http_responses">
+        <h1>Not found testing</h1>
+    </main>
+
+</html>

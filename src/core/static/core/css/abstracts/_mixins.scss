@@ -1,0 +1,49 @@
+
+@mixin underline-hover-effect($height, $color) {
+
+    position: relative;
+    padding: 4px 0;
+
+    &::after {
+        content: ' ';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: $height;
+        bottom: 0;
+        left: 0;
+        background-color: $color;
+        transform-origin: bottom left;
+        transition: transform 0.5s ease-out;
+    }
+
+    &:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+}
+
+@mixin block-quote {
+  blockquote {
+    /* background: #f9f9f9; */
+    border-left: 10px solid var(--clr-primary-400);
+    margin: 1.5em 10px;
+    padding: 1rem 20px;
+    quotes: "\201C""\201D""\2018""\2019";
+    box-shadow: inset 0 0 100px rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+
+    p {
+      display: inline;
+    }
+
+    &:before {
+      color: #ccc;
+      content: open-quote;
+      font-size: 4em;
+      line-height: 0.1em;
+      margin-right: 0.25em;
+      vertical-align: -0.4em;
+    }
+  }
+}

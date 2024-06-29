@@ -32,10 +32,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-input {
-  -webkit-appearance: none;
-  border-radius: 0; }
-
 .flex {
   display: flex; }
 
@@ -757,8 +753,16 @@ i {
   text-transform: uppercase;
   font-weight: 800; }
 
+.post .post-entry {
+  font-weight: 600; }
+
 .post .post-body {
   color: var(--clr-black-200); }
+
+.post .post-references {
+  color: var(--clr-black-200); }
+  .post .post-references p {
+    margin: 0.2rem; }
 
 .post pre {
   margin: 20px 0; }
@@ -782,6 +786,32 @@ table {
     background-color: #f2f2f2; }
   table tr:hover {
     background-color: #f5f5f5; }
+
+.pagination .btn {
+  background-color: var(--clr-primary-400);
+  color: white;
+  padding: 0.4rem;
+  border: 1px solid var(--clr-primary-400); }
+
+.pagination .btn--current {
+  background-color: transparent;
+  color: var(--clr-primary-400); }
+
+.form-default p {
+  margin-bottom: 0.5rem; }
+
+.form-default textarea {
+  width: 100%; }
+
+.form-default label {
+  margin-top: 1rem;
+  display: block; }
+
+.form-default input[type="text"] {
+  width: 100%; }
+
+.ck-editor-container {
+  margin-bottom: 2rem; }
 
 :root {
   font-family: 'LibreFranklin', sans-serif;
@@ -1243,5 +1273,8 @@ main {
 
 .cursor--pointer {
   cursor: pointer; }
+
+.http_responses {
+  background-color: var(--clr-primary-400-95); }
 
 /*# sourceMappingURL=style.css.map */

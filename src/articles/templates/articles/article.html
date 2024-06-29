@@ -1,0 +1,36 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load sass_tags %}
+{% load hitcount_tags %}
+
+
+{% block title %}
+  {{ article.title }}
+{% endblock %}
+
+{% block content %}
+<main class="container">
+    <article class="post">
+        <img class="post-img" src="{{ article.thumbnail.url }}" alt="">
+        {% if user_is_editor %}
+            <p>
+               <a class="btn-cta-1 xs-p" href="{% url 'articles:edit' slug=article.slug %}">Edit Post</a>
+               <a class="btn-cta-warning xs-p" href="{% url 'articles:delete' slug=article.slug %}">Delete Post</a>
+            </p>
+        {% endif %}
+        <h1 class="post-title">{{ article.title }}</h1>
+        <time class="post-time">{{ article.created_at | date:"d M Y" }}</time>
+        <div class="post-entry bold">{{ article.entry | safe }}</div>
+        <div class="post-body">
+            {{ article.content | safe }}
+        </div>
+
+        {% if article.references %}
+            <div class="post-references">
+                <h1>Referenser</h1>
+                {{ article.references | safe }}
+            </div>
+        {% endif %}
+    </article>
+</main>
+{%  endblock %}

@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% block title %}Alexander Eriksson | Blogg{% endblock %}
+
+{% block content %}
+<main class="container">
+    {% if user_is_editor %}
+        <div class="xl-my">
+            <a href="{% url 'articles:manage' %}" class="btn-cta-1 xs-p">Manage Posts</a>
+        </div>
+    {% endif %}
+    {% include 'articles/partials/grid_view.html' %}
+</main>
+<div class="pagination txt-a-center">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <a class="btn" href="?page={{ page_obj.previous_page_number }}">&laquo</a>
+        {% endif %}
+
+        {% for num in page_obj.paginator.page_range %}
+            {% if num == page_obj.number %}
+                <span class="btn btn--current">{{ num }}</span>
+            {% else %}
+                <a class="btn btn--not-current" href="?page={{ num }}">{{ num }}</a>
+            {% endif %}
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+            <a class="btn" href="?page={{ page_obj.next_page_number }}">&raquo</a>
+        {% endif %}
+    </span>
+</div>
+{% endblock %}
