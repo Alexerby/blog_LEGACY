@@ -1,6 +1,8 @@
 from .base import *
 
-DEBUG = False
-ALLOWED_HOSTS = ['alexandereriksson.se', '188.66.62.186', 'www.alexandereriksson.se', '127.0.0.1']
+DEBUG = True
+ALLOWED_HOSTS = ['alexandereriksson.se', 'www.alexandereriksson.se', '186.66.62.186']
 
 
+# Custom logger
+logger = logging.getLogger('django')
