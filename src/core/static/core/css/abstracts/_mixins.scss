@@ -25,11 +25,13 @@
 
 @mixin block-quote {
   blockquote {
-    background: #f9f9f9;
+    /* background: #f9f9f9; */
     border-left: 10px solid var(--clr-primary-400);
     margin: 1.5em 10px;
     padding: 1rem 20px;
     quotes: "\201C""\201D""\2018""\2019";
+    box-shadow: inset 0 0 100px rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
 
     p {
       display: inline;
