@@ -1,3 +1,4 @@
+
 import os
 from pathlib import Path
 import json
@@ -10,42 +11,24 @@ CONFIG_FILE = '/etc/blog/config.json'
 ADMIN_WHITELIST = ['127.0.0.1']
 
 
-with open(CONFIG_FILE) as f:
-    config = json.load(f)
-    
-    SECRET_KEY = config['SECRET_KEY']
-
-
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
-    'formatters': {
-        'verbose': {
-            'format': '%(levelname)s %(asctime)s %(message)s',
-            },
-    },
     'handlers': {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': '/tmp/django_errors.log',
+            'filename': '/var/log/django/errors.log',
         },
     },
     'loggers': {
         'django': {
             'handlers': ['file'],
-            'level': 'DEBUG',
+            'level': 'ERROR',
             'propagate': True,
         },
     },
 }
-
-# Apply logging configuration
-logging.config.dictConfig(LOGGING)
-
-# Custom logger
-logger = logging.getLogger('django')
-logger.error("WORKING")
 
 INSTALLED_APPS = [
 
@@ -163,7 +146,7 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = 'static/'
-STATIC_ROOT = '/var/www/alexandereriksson.se/static'
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets') 
 
 
 MEDIA_URL = 'media/'
