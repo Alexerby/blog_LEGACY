@@ -40,9 +40,6 @@ LOGGING = {
     },
 }
 
-# Apply logging configuration
-logging.config.dictConfig(LOGGING)
-
 # Custom logger
 logger = logging.getLogger('django')
 logger.error("WORKING")
@@ -50,12 +47,18 @@ logger.error("WORKING")
 INSTALLED_APPS = [
 
     # Django Apps
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    ## Admin
+    'django.contrib.admin',
+
+    ### OTP
+    'django_otp',
+    'django_otp.plugins.otp_totp',
 
     # Misc
     'compressor',
@@ -81,6 +84,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_otp.middleware.OTPMiddleware', # OTP
 
     # Custom
     'core.middleware.admin_restrict.AdminRestrictMiddleware'

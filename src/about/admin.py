@@ -1,5 +1,7 @@
 from django.contrib import admin
 from .models import AboutSection, WorkReference
 
-admin.site.register(AboutSection)
-admin.site.register(WorkReference)
+from user.admin import admin_site
+
+admin_site.register(AboutSection)
+admin_site.register(WorkReference)
