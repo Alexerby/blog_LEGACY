@@ -157,6 +157,22 @@ STATICFILES_FINDERS = (
                        ) 
 
 
+STATIC_URL = 'static/'
+STATIC_ROOT = '/var/www/alexandereriksson.se/static'
+
+
+# SCSS Setup
+COMPRESS_PRECOMPILERS = (    
+                         ('text/x-scss', 'django_libsass.SassCompiler'),
+                         )
+
+SASS_PROCESSOR_OUTPUT_STYLE = 'compressed'
+
+
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -164,17 +180,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
-STATIC_URL = 'static/'
-STATIC_ROOT = '/var/www/alexandereriksson.se/static'
-
-
-MEDIA_URL = 'media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-COMPRESS_PRECOMPILERS = (    
-                         ('text/x-scss', 'django_libsass.SassCompiler'),
-                         )
 
 COMPRESS_ENABLED = True
 
