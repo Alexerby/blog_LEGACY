@@ -55,6 +55,9 @@
 
     .post-references {
 
+        hyphens: auto;
+        word-break: break-all;
+
       h1 {
           color: var(--clr-primary-400);
       }
@@ -72,7 +75,6 @@
     }
 
     p {
-        text-align: justify;
         margin: 20px 0;
     }
 
