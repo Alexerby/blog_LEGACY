@@ -28,7 +28,7 @@ LOGGING = {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': '/tmp/django_errors.log',
+            'filename': '/var/log/blog/DEBUG.log',
         },
     },
     'loggers': {
@@ -40,9 +40,8 @@ LOGGING = {
     },
 }
 
-# Custom logger
-logger = logging.getLogger('django')
-logger.error("WORKING")
+# logger = logging.getLogger('django')
+# logger.error("WORKING")
 
 INSTALLED_APPS = [
 
