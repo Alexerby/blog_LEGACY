@@ -24,7 +24,7 @@ class Article(models.Model):
             ]
 
     title = models.CharField(max_length=100)
-    thumbnail = models.FileField(upload_to='articles/thumbnails')
+    thumbnail = models.ImageField(upload_to='articles/thumbnails')
     entry = CKEditor5Field('Entry', config_name = 'default', validators=[MaxLengthValidator(500)], null=True, blank=True)
     content = CKEditor5Field('Body', config_name='extends', null=True, blank=True)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
