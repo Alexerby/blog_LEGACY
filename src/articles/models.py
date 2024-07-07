@@ -31,7 +31,7 @@ class Article(models.Model):
     language = models.CharField(max_length=20, choices=LANGUAGE, default='se')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    published = models.BooleanField(default=False) 
+    published = models.BooleanField() 
     slug = AutoSlugField(populate_from='title', unique=True, default=None)  
     references = CKEditor5Field('References', config_name='extends', null=True, blank=True)
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, null=True)

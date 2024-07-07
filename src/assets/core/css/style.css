@@ -583,22 +583,23 @@ i {
   align-items: center;
   padding: 2rem 0;
   justify-content: space-between;
-  margin: 0 15px; }
+  margin: 0 15px;
+  white-space: nowrap; }
   @media (min-width: 1000px) {
     .navbar .sidebar-toggle {
       display: none; } }
-  .navbar .navbar-nav {
+  .navbar-nav {
     list-style-type: none;
     display: flex;
     flex-direction: row;
     align-items: center; }
-    .navbar .navbar-nav a {
+    .navbar-nav a {
       position: relative;
       padding: 4px 0;
       margin-left: 2rem;
       display: flex;
       align-items: center; }
-      .navbar .navbar-nav a::after {
+      .navbar-nav a::after {
         content: ' ';
         position: absolute;
         width: 100%;
@@ -609,12 +610,12 @@ i {
         background-color: white;
         transform-origin: bottom left;
         transition: transform 0.5s ease-out; }
-      .navbar .navbar-nav a:hover::after {
+      .navbar-nav a:hover::after {
         transform: scaleX(1);
         transform-origin: bottom left; }
-      .navbar .navbar-nav a:first-child {
+      .navbar-nav a:first-child {
         margin-left: 5rem; }
-      .navbar .navbar-nav a span {
+      .navbar-nav a span {
         margin-left: 0.5rem; }
   .navbar .sidebar-menu:hover {
     cursor: pointer; }
@@ -666,6 +667,18 @@ i {
 
 .navbar-brand {
   width: clamp(150px, 25vw, 400px); }
+
+.navbar-boating div {
+  background-color: var(--clr-secondary-500); }
+
+.navbar-boating-item {
+  transition: 0.4s, background-position 0s;
+  padding: 10px; }
+  .navbar-boating-item:hover {
+    background-color: var(--clr-primary-400); }
+  .navbar-boating-item span {
+    color: white;
+    font-weight: 600; }
 
 .article {
   width: 400px;
@@ -1237,7 +1250,7 @@ main {
   margin: 200px 0; }
 
 .container {
-  padding: 0 clamp(40px, 18vw, 1000px); }
+  padding: 0 clamp(50px, 18vw, 1000px); }
   @media (max-width: 768px) {
     .container {
       padding: 0 clamp(10px, 10vw, 100px); } }

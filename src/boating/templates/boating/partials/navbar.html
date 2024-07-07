@@ -1,0 +1,12 @@
+{% load static %}
+{% load sass_tags %}
+
+<nav class="navbar-boating container">
+    <div class="flex flex-row">
+        {% for item in boating_nav_items %}
+            <a href="{% url item.url %}"class="navbar-boating-item">
+                <span>{{ item.text }}</span>
+            </a>
+        {% endfor %}
+    </div>
+</nav>

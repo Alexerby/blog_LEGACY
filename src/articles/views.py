@@ -67,7 +67,6 @@ class ManageArticlesListView(ArticleListView):
         return context
 
 
-
 class AddPostView(StaffRequiredMixin, CreateView):
     model = Article
     template_name = 'articles/manage/add_post.html'
@@ -75,6 +74,7 @@ class AddPostView(StaffRequiredMixin, CreateView):
 
     def get_success_url(self):
         return reverse('articles:article', args=[self.object.slug])
+
 
 class UpdatePostView(StaffRequiredMixin, UpdateView):
     model = Article

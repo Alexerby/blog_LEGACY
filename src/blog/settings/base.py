@@ -70,6 +70,7 @@ INSTALLED_APPS = [
     'user',
     'articles',
     'about',
+    'boating',
 ]
 
 
@@ -108,9 +109,14 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
 
                 # Custom
+
+                ## Core
                 'core.context_processors.user_info', # FIX: Not in use
                 'core.context_processors.nav_items',
                 'core.context_processors.socialmedia_icons',
+                
+                ## Boating
+                'boating.context_processors.boating_nav_items',
             ],
         },
     },

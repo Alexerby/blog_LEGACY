@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load sass_tags %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<main>
+
+    <section class="container">
+
+        <div>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam saepe architecto libero! Eius hic omnis beatae molestias, officia recusandae. Corrupti saepe reprehenderit quos dolore, earum deserunt consequuntur totam hic beatae, at, deleniti excepturi. Asperiores eveniet tempore doloremque repellendus debitis molestiae aliquam inventore, reiciendis voluptatem incidunt architecto fuga, qui non voluptatibus eius quae ratione perspiciatis nobis laborum est deleniti fugiat eligendi labore deserunt. Eum atque saepe enim soluta suscipit ad in, eius quis ipsa illo aliquid ratione molestias consequuntur libero asperiores odit laboriosam, ea iure iste accusamus! Error vel amet accusamus maxime, suscipit officia saepe quas minus. Commodi quas provident temporibus!</p>
+        </div>
+    </section>
+        
+    <section class="sec-def">
+        {% include 'boating/partials/navbar.html' %}
+    </section>
+</main>
+{% endblock %}

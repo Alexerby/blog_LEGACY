@@ -1,3 +1,4 @@
+// Main Header Scroll
 $(function(){
     var lastScrollTop = 0, delta = 15;
     $(window).scroll(function(event){
@@ -6,11 +7,11 @@ $(function(){
        if(Math.abs(lastScrollTop - st) <= delta)
           return;
 if ((st > lastScrollTop) && (lastScrollTop>0)) {
-       // downscroll code
+       // downscroll 
       $("header").css("top","-200px");
   
    } else {
-      // upscroll code
+      // upscroll
       $("header").css("top","0px");
    }
        lastScrollTop = st;

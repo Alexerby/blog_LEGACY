@@ -59,7 +59,7 @@ main {
 }
 
 .container {
-    padding: 0 clamp(40px, 18vw, 1000px);
+    padding: 0 clamp(50px, 18vw, 1000px);
 
     @media (max-width: 768px) {
         padding: 0 clamp(10px, 10vw, 100px);

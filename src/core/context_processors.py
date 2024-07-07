@@ -7,6 +7,12 @@ def user_info(request):
 def nav_items(request):
     nav_items = [
         {
+            'url': 'boating:index',
+            'icon': 'core/icons/anchor.svg',
+            'alt': 'Boating Icon',
+            'text': 'Båtverksamhet'
+        },
+        {
             'url': 'articles:index',
             'icon': 'core/icons/envelope_white.svg',
             'alt': 'Mail Icon',
@@ -17,7 +23,7 @@ def nav_items(request):
             'icon': 'core/icons/about.svg',
             'alt': 'About Icon',
             'text': 'Om mig'
-        }
+        },
     ]
     return { 'nav_items': nav_items }
 

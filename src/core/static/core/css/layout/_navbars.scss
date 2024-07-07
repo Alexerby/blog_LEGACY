@@ -1,6 +1,5 @@
 .navbar {
 
-
     @media (min-width: 1000px) {
         // Hide icon above 1000px
         .sidebar-toggle {
@@ -8,16 +7,15 @@
         }
     }
 
-
     display: flex;
     align-items: center;
     padding: 2rem 0;
     justify-content: space-between;
     margin: 0 15px;
+    white-space: nowrap;
 
 
-
-    .navbar-nav {
+    &-nav {
         list-style-type: none;
         display: flex;
         flex-direction: row;
@@ -136,3 +134,25 @@
     .navbar-brand {
         width: clamp(150px, 25vw, 400px);
     }
+
+.navbar-boating {
+  div {
+    background-color: var(--clr-secondary-500);
+  }
+
+  &-item {
+    transition: 0.4s, background-position 0s;
+
+    &:hover {
+      background-color: var(--clr-primary-400);
+    }
+
+    padding: 10px;
+
+    span {
+      color: white;
+      font-weight: 600;
+    }
+
+  }
+}
