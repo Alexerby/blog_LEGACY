@@ -1,0 +1,30 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load sass_tags %}
+{% load humanize %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<main class="container">
+    <div class="grid-container boat-grid">
+        {% for boat in boats %}
+            <a href="{{ boat.get_absolute_url }}" class="grid__item boat-grid__item">
+                <img src="{{ boat.thumbnail.url }}" alt="{{ boat.title }}">
+                <div class="boat-grid__item-text">
+                    <h3 class="grid__item-text-title">{{ boat.title }}</h3>
+                    <div class="boat-grid__item-text-info">
+                        <p class="boat-grid__item-text-info__meta">
+                            {{ boat.length }} m
+                            <span class="boat-grid__item-text-info-bullet">&bull;</span>
+                            <span>{{ boat.year }}</span>
+                        </p>
+                        <p class="boat-grid__item-text-info__price xs-my">{{ boat.price|intcomma }} SEK</p>
+                        <p class="btn-cta-outline xs-p sm-mt">Läs mer om båten &#187;</p>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+</main>
+{% endblock %}

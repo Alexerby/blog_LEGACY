@@ -22,13 +22,13 @@ class ArticleListView(GroupMixin, ListView):
     template_name = 'articles/article-list.html'  
     context_object_name = 'articles'  
     ordering = ['created_at']
+    paginate_by = 10
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
         context['user_is_editor'] = self.user_in_group('Editor')
         return context
 
-    paginate_by = 10
 
     def get_queryset(self):
         return Article.objects.order_by('created_at')

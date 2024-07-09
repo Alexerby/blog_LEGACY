@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import Http404, render
 from django.views.generic import TemplateView, DetailView, ListView
-from .models import BoatListing
+from .models import BoatListing, Picture
+from django.urls import reverse
 
 
 
@@ -19,7 +20,8 @@ class BoatingPageView(TemplateView):
 
 class BoatsForSaleView(ListView):
     model = BoatListing
-
+    context_object_name = 'boats'
+    ordering = ['created_at']
     template_name = 'boating/for-sale/index.html'
 
     def get_title(self):
@@ -28,9 +30,20 @@ class BoatsForSaleView(ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(object_list=object_list, **kwargs)
+        context['title'] = self.get_title()
         return context
 
     def get_queryset(self):
-        qs = super().get_queryset()
-        return qs.filter(published=True)
+        return BoatListing.objects.filter(published=True)
+
+class BoatDetailView(DetailView):
+    model = BoatListing
+    template_name = 'boating/for-sale/boat.html'
+    context_object_name = 'boat'
+
+    def get_object(self, queryset=None):
+        obj = super().get_object(queryset=queryset)
+        if not obj.published:
+            raise Http404("Boat not found")
+        return obj
 

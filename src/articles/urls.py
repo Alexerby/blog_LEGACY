@@ -4,8 +4,6 @@ from .views import (ArticleDetailView, ArticleListView, AddPostView,
                     DeletePostView, UpdatePostView, ManageArticlesListView
                     )
 
-
-
 app_name = 'articles'
 
 urlpatterns = [

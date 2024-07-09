@@ -13,6 +13,14 @@
     format('truetype');
 }
 
+
+@font-face {
+    font-family: 'Libre Baskerville';
+    src: local('LibreBaskerville'), 
+    url('../fonts/LibreBaskerVille-Regular.ttf') 
+    format('truetype');
+}
+
 .font-cinzel {
     font-family: 'Cinzel';
 }
@@ -83,3 +91,6 @@ i {
         text-align: #{$value};
     }
 }
+
+
+
