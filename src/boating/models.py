@@ -3,7 +3,7 @@ from django.shortcuts import reverse
 from django_ckeditor_5.fields import CKEditor5Field
 from autoslug import AutoSlugField
 
-class BoatListing(models.Model):
+
     MOTORBOAT = 'motorboat'
     SAILBOAT = 'sailboat'
     BOAT_TYPE_CHOICES = [

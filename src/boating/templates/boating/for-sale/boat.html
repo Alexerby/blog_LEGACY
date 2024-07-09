@@ -6,6 +6,119 @@
 
 {% block content %}
 <main class="container">
+
+    <section class="horizontal-gallery">
+
+    </section>
+    <setion>
+        <h1>{{ boat.title }}</h1>
+        <div class="stats">
+            <span> {{ boat.engine }}</span>
+             &bull; <span>{{ boat.price }} SEK</span>
+        </div>
+
+        <div class="stats">
+            <span>{{ boat.length }}</span>
+            <span>{{ boat.beam }}</span>
+            <span>{{ boat.top_speed }}</span>
+        </div>
+    </setion>
+    <section>
+        <div>
+            {{ boat.description | safe }}
+        </div>
+    </section>
+    <section>
+        <div class="spec-block">
+            <h2 class="heading--section">Översikt</h2>
+            <div class="spec-block__list">
+                <li class="spec-block__list-item">
+                    <span class="spec-block__title"></span>
+                    <span class="spec-block__title"></span>
+                </li>
+                <li class="spec-block__list-item">
+                    <span class="spec-block__title"></span>
+                    <span class="spec-block__title"></span>
+                </li>
+                <li class="spec-block__list-item">
+                    <span class="spec-block__title"></span>
+                    <span class="spec-block__title"></span>
+                </li>
+            </div>
+        </div>
+
+        <div class="spec-block">
+            <h2 class="heading--section">Dimensioner</h2>
+            <div class="spec-block__list">
+                <li class="spec-block__list-item">
+                    <span class="spec-block__title"></span>
+                    <span class="spec-block__title"></span>
+                </li>
+                <li class="spec-block__list-item">
+                    <span class="spec-block__title"></span>
+                    <span class="spec-block__title"></span>
+                </li>
+                <li class="spec-block__list-item">
+                    <span class="spec-block__title"></span>
+                    <span class="spec-block__title"></span>
+                </li>
+            </div>
+        </div>
+
+        <div class="spec-block">
+            <h2 class="heading--section">Konstruktion</h2>
+            <div class="spec-block__list">
+                <li class="spec-block__list-item">
+                    <span class="spec-block__title"></span>
+                    <span class="spec-block__title"></span>
+                </li>
+                <li class="spec-block__list-item">
+                    <span class="spec-block__title"></span>
+                    <span class="spec-block__title"></span>
+                </li>
+                <li class="spec-block__list-item">
+                    <span class="spec-block__title"></span>
+                    <span class="spec-block__title"></span>
+                </li>
+            </div>
+        </div>
+
+        <div class="spec-block">
+            <h2 class="heading--section">Prestanda och Kapacitet</h2>
+            <div class="spec-block__list">
+                <li class="spec-block__list-item">
+                    <span class="spec-block__title"></span>
+                    <span class="spec-block__title"></span>
+                </li>
+                <li class="spec-block__list-item">
+                    <span class="spec-block__title"></span>
+                    <span class="spec-block__title"></span>
+                </li>
+                <li class="spec-block__list-item">
+                    <span class="spec-block__title"></span>
+                    <span class="spec-block__title"></span>
+                </li>
+            </div>
+        </div>
+
+        <div class="spec-block">
+            <h2 class="heading--section">Motor</h2>
+            <div class="spec-block__list">
+                <li class="spec-block__list-item">
+                    <span class="spec-block__title"></span>
+                    <span class="spec-block__title"></span>
+                </li>
+                <li class="spec-block__list-item">
+                    <span class="spec-block__title"></span>
+                    <span class="spec-block__title"></span>
+                </li>
+                <li class="spec-block__list-item">
+                    <span class="spec-block__title"></span>
+                    <span class="spec-block__title"></span>
+                </li>
+            </div>
+        </div>
+    </section>
     
 </main>
 {% endblock %}
