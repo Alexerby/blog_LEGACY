@@ -1,6 +1,6 @@
 {% load static %}
 
-<div class="blog flex-flow-rw">
+<div class="grid-3x3">
     {% for article in articles %}
         {% if article.published %}
             <a href="{{ article.get_absolute_url }}">

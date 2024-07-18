@@ -103,3 +103,10 @@ $margin-list: ();
         height: #{$size}px; 
     }
 }
+
+
+@each $size in (10, 20, 30, 40, 50) {
+    .gap-#{$size} {
+        gap: #{$size}px; 
+    }
+}

@@ -5,6 +5,7 @@
 
 // Abstracts
 @import "abstracts/_functions.scss";
+@import "abstracts/_breakpoints.scss";
 @import "abstracts/_mixins.scss";
 @import "abstracts/_flexbox.scss";
 @import "abstracts/_spacing.scss";
@@ -75,12 +76,6 @@ main {
     text-decoration: none;
 }
 
-
-.blog {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
 
 .container-txt {
     @media (max-width: 1200px) {

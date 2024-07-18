@@ -1,6 +1,6 @@
 {% load static %}
 
-<div class="blog flex-col">
+<div class="grid gap-20">
     {% for article in articles %}
         {% if article.published %}
             <a class="w-full hvr-bs" href="{{ article.get_absolute_url }}">
